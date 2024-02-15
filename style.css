@@ -2,10 +2,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 body {
   background-color: black;
+}
+
+/* BACKGROUND */
+.background__container {
+  width: 100vw;
+  height: 100vh;
+}
+.background__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center TOP;
 }
 
 /*# sourceMappingURL=style.css.map */
