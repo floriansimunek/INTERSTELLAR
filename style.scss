@@ -70,42 +70,6 @@ body {
   }
 }
 
-@keyframes swipe-from-right {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes swipe-from-left {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes swipe-from-bottom {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 /* BACKGROUND */
 .background {
   &__container {
@@ -146,5 +110,101 @@ body {
     @media screen and (min-width: 1200px) {
       animation: swipe-from-bottom 1s forwards;
     }
+  }
+}
+
+/* MENU */
+.burger {
+  width: 40px;
+  height: 25px;
+  position: fixed;
+  top: 2.5svh;
+  left: 2.5svh;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .line {
+    height: 2px;
+    width: 0;
+    background-color: white;
+    background-blend-mode: difference;
+    opacity: 0;
+    animation: grow 1s forwards;
+    transition: all 1s ease;
+
+    @for $i from 1 through 3 {
+      &:nth-last-child(#{$i}) {
+        animation-delay: calc($i - 1) * 150ms;
+      }
+    }
+  }
+}
+
+[data-menu-is-open='true'] {
+  .burger {
+    .line {
+      background-color: black;
+
+      &:first-child,
+      &:last-child {
+        scale: 0;
+      }
+    }
+  }
+}
+
+/* ANIMATIONS */
+@keyframes swipe-from-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes swipe-from-left {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes swipe-from-bottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes grow {
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    width: 100%;
+    opacity: 1;
   }
 }
