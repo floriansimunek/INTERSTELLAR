@@ -430,7 +430,8 @@ body {
   background-color: white;
   background-blend-mode: difference;
   opacity: 0;
-  animation: grow 1.5s forwards;
+  animation: grow 1s forwards;
+  transition: all 1s ease;
 }
 .burger .line:nth-last-child(1) {
   animation-delay: 0ms;
@@ -440,6 +441,13 @@ body {
 }
 .burger .line:nth-last-child(3) {
   animation-delay: 300ms;
+}
+
+[data-menu-is-open=true] .burger .line {
+  background-color: black;
+}
+[data-menu-is-open=true] .burger .line:first-child, [data-menu-is-open=true] .burger .line:last-child {
+  scale: 0;
 }
 
 /* ANIMATIONS */

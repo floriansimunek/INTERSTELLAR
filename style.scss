@@ -132,11 +132,25 @@ body {
     background-color: white;
     background-blend-mode: difference;
     opacity: 0;
-    animation: grow 1.5s forwards;
+    animation: grow 1s forwards;
+    transition: all 1s ease;
 
     @for $i from 1 through 3 {
       &:nth-last-child(#{$i}) {
         animation-delay: calc($i - 1) * 150ms;
+      }
+    }
+  }
+}
+
+[data-menu-is-open='true'] {
+  .burger {
+    .line {
+      background-color: black;
+
+      &:first-child,
+      &:last-child {
+        scale: 0;
       }
     }
   }
