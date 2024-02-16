@@ -7,7 +7,7 @@
 
 body {
   background-color: black;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
 /* TITLE */
@@ -48,7 +48,7 @@ body {
     animation: swipe-from-right 500ms ease forwards;
     @for $i from 0 through 100 {
       &:nth-child(#{$i}) {
-        animation-delay: calc($i - 1) * 0.15s;
+        animation-delay: calc($i - 1) * 75ms;
       }
     }
 
