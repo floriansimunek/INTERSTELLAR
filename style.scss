@@ -232,6 +232,7 @@ body {
       @media screen and (min-width: 1024px) {
         .text,
         .overlay {
+          transition: all 500ms;
           transform: translateY(100%);
         }
 
@@ -242,7 +243,7 @@ body {
 
           .text,
           .overlay {
-            animation: swipe-from-bottom 500ms forwards;
+            transform: translateY(0);
           }
         }
       }

@@ -533,6 +533,7 @@ body {
 @media screen and (min-width: 1024px) {
   .navbar__background .image__container .text,
   .navbar__background .image__container .overlay {
+    transition: all 500ms;
     transform: translateY(100%);
   }
   .navbar__background .image__container:hover img {
@@ -540,7 +541,7 @@ body {
   }
   .navbar__background .image__container:hover .text,
   .navbar__background .image__container:hover .overlay {
-    animation: swipe-from-bottom 500ms forwards;
+    transform: translateY(0);
   }
 }
 .navbar__background .image__container img {
