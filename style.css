@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   overflow: hidden;
+  cursor: none;
 }
 
 html,
@@ -645,6 +646,50 @@ body {
   transform: scale(1);
 }
 
+/* CURSOR */
+.cursor {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  top: -100%;
+  left: -100%;
+  background-color: white;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 9999999;
+  transition: width 0.25s ease, height 0.25s ease;
+  animation: orbit 5s linear infinite;
+  overflow: visible;
+}
+.cursor.pointer {
+  width: 40px;
+  height: 40px;
+}
+.cursor.pointer .inner {
+  transform: scale(1);
+}
+.cursor .inner {
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: all 0.25s ease;
+}
+
+@keyframes orbit {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
 /* ANIMATIONS */
 @keyframes swipe-from-right {
   0% {
