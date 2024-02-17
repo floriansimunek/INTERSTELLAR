@@ -91,7 +91,7 @@ body {
 
     @media screen and (min-width: 1024px) {
       animation: swipe-from-bottom 1s forwards 250ms;
-      scale: 1.2;
+      transform: scale(1.2);
     }
   }
 
@@ -133,7 +133,8 @@ body {
     background-blend-mode: difference;
     opacity: 0;
     animation: grow 1s forwards;
-    transition: all 500ms ease;
+    transform: scale(1);
+    transition: transform 1s ease, color 500ms;
 
     @for $i from 1 through 3 {
       &:nth-last-child(#{$i}) {
@@ -221,6 +222,8 @@ body {
       width: 100%;
       height: 100%;
       position: relative;
+      transform: scale(0);
+      transition: transform 1s;
 
       img {
         width: 100%;
@@ -271,7 +274,7 @@ body {
 
       &:first-child,
       &:last-child {
-        scale: 0;
+        transform: scale(0);
       }
     }
   }
@@ -280,6 +283,10 @@ body {
   .navbar__background {
     transform: translateY(0);
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  .image__container {
+    transform: scale(1);
   }
 }
 
